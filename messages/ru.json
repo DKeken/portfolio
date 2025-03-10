@@ -1,0 +1,126 @@
+{
+  "hero": {
+    "open_to_offers": "Открыт к предложениям",
+    "hello_name": "Привет, я Даниил",
+    "developer_description": "Fullstack разработчик, специализирующийся на создании современных веб-приложений",
+    "contact": "Связаться",
+    "learn_more": "Узнать больше",
+    "about_me": "Обо мне",
+    "name": "Даниил Шовкунов",
+    "download_resume": "Скачать резюме"
+  },
+  "footer": {
+    "rights": "Все права защищены"
+  },
+  "navigation": {
+    "hero": "Главная",
+    "additional-info": "Обо мне",
+    "portfolio": "Портфолио",
+    "vacancy": "Опыт",
+    "technologies": "Навыки"
+  },
+  "vacancy": {
+    "name": "Даниил Шовкунов",
+    "title": "Желаемая должность и зарплата",
+    "experience": "Опыт работы",
+    "job_position": "Fullstack Разработчик",
+    "employment_types": {
+      "full_time": "Полная занятость",
+      "full_day": "Полный день",
+      "remote": "Удаленная работа"
+    },
+    "salary": {
+      "desired_salary": "Желаемая зарплата",
+      "monthly": "Ежемесячно",
+      "hourly": "Почасовая ставка"
+    },
+    "currency": {
+      "title": "Предпочитаемые валюты",
+      "base_currency": "Базовая валюта",
+      "usd": "Доллар США",
+      "eur": "Евро",
+      "gbp": "Британский фунт",
+      "rub": "Рубль",
+      "rates_unavailable": "Курсы валют в настоящее время недоступны"
+    },
+    "year_forms": {
+      "singular": "год",
+      "few": "года",
+      "many": "лет"
+    }
+  },
+  "technologies": {
+    "title": "Технологии",
+    "groups": {
+      "languages": "Языки программирования",
+      "frontend": "Фронтенд",
+      "backend": "Бэкенд",
+      "database": "Базы данных",
+      "devops": "DevOps",
+      "tools": "Инструменты",
+      "build": "Инструменты сборки",
+      "blockchain": "Блокчейн",
+      "validation": "Валидация"
+    }
+  },
+  "additional_info": {
+    "title": "За пределами кода",
+    "about_me": {
+      "title": "Путь в технологиях",
+      "description": "Fullstack разработчик, ориентированный на практические решения. Победитель Nestro Challenge Hackathon 2023, разработчик корпоративных блокчейн-систем, активный участник open source. Работаю с современным стеком технологий, имею опыт как в стартапах, так и в крупных компаниях.",
+      "badges": {
+        "hackathon_winner": "Победитель хакатона",
+        "open_source": "Open Source контрибьютор",
+        "blockchain": "Эксперт по блокчейну",
+        "modern_stack": "Современный стек"
+      }
+    },
+    "links": {
+      "github": "github.com/DKeken",
+      "stack": "Мой стек: turborepo-ton-trpc (⭐ Отмечен командой TON Blockchain)"
+    },
+    "approach": {
+      "title": "Мои сильные стороны",
+      "adaptability": {
+        "title": "Современный стек",
+        "description": "Next.js, NestJS, React, Node.js для быстрых и надёжных приложений. Опыт с микросервисами, TypeScript и различными базами данных. Всегда подбираю оптимальные инструменты под задачу."
+      },
+      "code_quality": {
+        "title": "Чистый код",
+        "description": "Строгая типизация на TypeScript, автоматизированное тестирование (Jest, Playwright), понятная документация. Настройка CI/CD и поддержка культуры код-ревью."
+      },
+      "business_focus": {
+        "title": "Ключевые функции",
+        "description": "Обработка данных в реальном времени, отзывчивые интерфейсы, интеграция API, платёжные системы, авторизация, оптимизация производительности. Упор на безопасность и масштабируемость."
+      }
+    }
+  },
+  "portfolio": {
+    "title": "Мои проекты",
+    "subtitle": "Подборка моих недавних работ и личных проектов",
+    "featured_project": "Избранный проект",
+    "view_code": "Посмотреть код",
+    "live_demo": "Демо-версия",
+    "projects": {
+      "project4": {
+        "title": "Корпоративная CRM-платформа",
+        "description": "Трансформация монолитного приложения в модульную, масштабируемую систему с использованием микрофронтендов, TypeScript и Effector с возможностями ИИ-прогнозирования",
+        "tags": "React, TypeScript, Effector, Vite, Kubernetes, GitLab CI/CD",
+        "link": "https://github.com/DKeken/crm-platform"
+      },
+      "project5": {
+        "title": "CRUD-приложение для работы с большими данными",
+        "description": "Гибкий инструмент для анализа и обработки пользовательских данных с типобезопасным API и эффективными операциями с базой данных",
+        "tags": "Next.js, tRPC, Prisma, TypeScript, BFF",
+        "link": "https://github.com/DKeken/data-processor"
+      },
+      "project6": {
+        "title": "Telegram Mini Apps с блокчейн-интеграцией",
+        "description": "Разработка мини-приложений для Telegram с интеграцией блокчейна TON, включая кроссчейновый кошелек-биржу для стейблкоинов",
+        "tags": "React, Next.js, TON, Blockchain, Telegram API, TypeScript, Drizzle, NestJS, Redis, PostgreSQL",
+        "link": "https://github.com/DKeken/ton-telegram-apps"
+      }
+    }
+  },
+  "title": "Даниил Шовкунов | Fullstack Разработчик"
+}

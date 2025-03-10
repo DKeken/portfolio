@@ -1,0 +1,154 @@
+{
+  "hero": {
+    "open_to_offers": "Open to offers",
+    "hello_name": "Hi, I'm Daniil",
+    "developer_description": "Fullstack developer specializing in building modern web applications",
+    "contact": "Contact",
+    "learn_more": "Learn more",
+    "about_me": "About me",
+    "name": "Daniil Shovkunov",
+    "download_resume": "Download Resume"
+  },
+
+  "footer": {
+    "rights": "All rights reserved"
+  },
+
+  "navigation": {
+    "hero": "Home",
+    "additional-info": "About",
+    "portfolio": "Portfolio",
+    "vacancy": "Experience",
+    "technologies": "Skills"
+  },
+
+  "vacancy": {
+    "name": "Daniil Shovkunov",
+    "experience": "Experience",
+    "title": "Desired position and salary",
+    "job_position": "Fullstack Developer",
+
+    "employment_types": {
+      "full_time": "Full-time",
+      "full_day": "Full day",
+      "remote": "Remote work"
+    },
+    "salary": {
+      "desired_salary": "Desired salary",
+      "monthly": "Monthly",
+      "hourly": "Hourly rate"
+    },
+    "currency": {
+      "title": "Preferred currencies",
+      "base_currency": "Base currency",
+      "usd": "US Dollar",
+      "eur": "Euro",
+      "gbp": "British Pound",
+      "rub": "Russian Ruble",
+      "rates_unavailable": "Exchange rates are currently unavailable"
+    },
+    "year_forms": {
+      "singular": "year",
+      "few": "years",
+      "many": "years"
+    }
+  },
+  "technologies": {
+    "title": "Technologies",
+    "groups": {
+      "languages": "Programming Languages",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Database",
+      "devops": "DevOps",
+      "tools": "Tools",
+      "build": "Build Tools",
+      "blockchain": "Blockchain",
+      "validation": "Validation"
+    }
+  },
+  "additional_info": {
+    "title": "Beyond the Code",
+    "about_me": {
+      "title": "Tech Journey",
+      "description": "Fullstack developer focused on practical solutions. Won Nestro Challenge Hackathon 2023, built enterprise blockchain systems, and actively contribute to open source. I enjoy working with modern tech stacks and have experience in both startups and large companies.",
+      "badges": {
+        "hackathon_winner": "Hackathon Winner",
+        "open_source": "Open Source Contributor",
+        "blockchain": "Blockchain Expert",
+        "modern_stack": "Modern Stack"
+      }
+    },
+    "links": {
+      "github": "github.com/DKeken",
+      "stack": "Check out my stack: turborepo-ton-trpc (⭐ Recognized by TON Blockchain team)"
+    },
+    "approach": {
+      "title": "What I Do Best",
+      "adaptability": {
+        "title": "Modern Tech Stack",
+        "description": "Next.js, NestJS, React, Node.js for fast and reliable apps. Experience with microservices, TypeScript, and various databases. Always picking the right tool for the job."
+      },
+      "code_quality": {
+        "title": "Clean Code Practices",
+        "description": "Strong typing with TypeScript, automated testing (Jest, Playwright), clear documentation. CI/CD pipelines and code review culture advocate."
+      },
+      "business_focus": {
+        "title": "Key Features I Build",
+        "description": "Real-time data processing, responsive UIs, API integrations, payment systems, auth flows, and performance optimization. Focus on security and scalability."
+      }
+    }
+  },
+  "portfolio": {
+    "title": "My Projects",
+    "subtitle": "A showcase of my recent work and personal projects",
+    "featured_project": "Featured Project",
+    "view_code": "View Code",
+    "live_demo": "Live Demo",
+    "categories": {
+      "all": "All",
+      "web": "Web",
+      "blockchain": "Blockchain",
+      "app": "Apps"
+    },
+    "projects": {
+      "project1": {
+        "title": "E-commerce Platform",
+        "description": "A modern e-commerce solution with real-time inventory management and payment processing",
+        "tags": "Next.js, TypeScript, Stripe, MongoDB",
+        "link": "https://github.com/DKeken/ecommerce-platform"
+      },
+      "project2": {
+        "title": "Blockchain Explorer",
+        "description": "A comprehensive blockchain explorer for TON network with transaction visualization",
+        "tags": "React, Node.js, TON SDK, D3.js",
+        "link": "https://github.com/DKeken/ton-explorer"
+      },
+      "project3": {
+        "title": "Task Management App",
+        "description": "Collaborative task management application with real-time updates and team features",
+        "tags": "React, Firebase, Tailwind CSS, tRPC",
+        "link": "https://github.com/DKeken/task-manager"
+      },
+      "project4": {
+        "title": "Enterprise CRM Platform",
+        "description": "Transformed a monolithic application into a modular, scalable system using microfrontends, TypeScript, and Effector with AI prediction capabilities",
+        "tags": "React, TypeScript, Effector, Vite, Kubernetes, GitLab CI/CD",
+        "link": "https://github.com/DKeken/crm-platform"
+      },
+      "project5": {
+        "title": "Big Data CRUD Application",
+        "description": "Flexible tool for analyzing and processing user data with type-safe API communication and efficient database operations",
+        "tags": "Next.js, tRPC, Prisma, TypeScript, BFF",
+        "link": "https://github.com/DKeken/data-processor"
+      },
+      "project6": {
+        "title": "Telegram Mini Apps with Blockchain",
+        "description": "Developed Telegram mini-applications with TON blockchain integration, including a cross-chain wallet-exchange for stablecoins",
+        "tags": "React, Next.js, TON, Blockchain, Telegram API, TypeScript, Drizzle, NestJS, Redis, PostgreSQL",
+        "link": "https://github.com/DKeken/ton-telegram-apps"
+      }
+    }
+  },
+  "title": "Daniil Shovkunov | Fullstack Developer"
+}
