@@ -3,12 +3,11 @@ import { getLocale, getTranslations } from "next-intl/server";
 import { ThemeProvider } from "@/components/providers/with-theme";
 import { I18nProvider } from "@/components/providers/with-i18n";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { Analytics } from "@vercel/analytics/react";
 
 import "./globals.css";
 import { ThemeSwitcher } from "@/components/ui/theme-switcher";
 import { LocaleSwitcher } from "@/components/ui/locale-switcher";
-import { YandexMetrika } from "@koiztech/next-yandex-metrika";
-import MetrikaProvider from "@/components/providers/with-metrika";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -55,25 +54,17 @@ export default async function RootLayout({
             disableTransitionOnChange
             enableSystem
           >
-            <MetrikaProvider>
-              <div className="fixed top-4 right-4 z-50 flex gap-1 items-center justify-center">
-                <LocaleSwitcher />
-                <ThemeSwitcher />
-              </div>
+            <div className="fixed top-4 right-4 z-50 flex gap-1 items-center justify-center">
+              <LocaleSwitcher />
+              <ThemeSwitcher />
+            </div>
 
-              <ScrollArea className="h-full w-full relative">
-                {children}
-              </ScrollArea>
-            </MetrikaProvider>
+            <ScrollArea className="h-full w-full relative">
+              {children}
+            </ScrollArea>
           </ThemeProvider>
         </I18nProvider>
-        <YandexMetrika
-          clickmap={true}
-          trackLinks={true}
-          accurateTrackBounce={true}
-          webvisor={false}
-          strategy="afterInteractive"
-        />
+        <Analytics />
       </body>
     </html>
   );
