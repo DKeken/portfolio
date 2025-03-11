@@ -46,7 +46,7 @@ export default async function RootLayout({
           content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover"
         />
       </head>
-      <body className={`${montserrat.variable} h-full w-full overflow-x-auto`}>
+      <body className={`${montserrat.variable} h-full w-full`}>
         <I18nProvider>
           <ThemeProvider
             attribute="class"

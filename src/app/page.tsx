@@ -8,7 +8,7 @@ import { Footer } from "@/components/footer";
 
 export default async function Main() {
   return (
-    <main className="flex min-h-screen w-full flex-col">
+    <main className="flex min-h-screen w-screen flex-col">
       <section id="hero">
         <Hero />
       </section>
