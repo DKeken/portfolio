@@ -4,12 +4,13 @@ import { FaTelegramPlane, FaGithub } from "react-icons/fa";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import Link from "next/link";
 import { ScrollButton } from "@/components/scroll-button";
 
 export async function Hero() {
   const t = await getTranslations("hero");
+  const locale = await getLocale();
 
   return (
     <section className="flex min-h-screen w-full flex-col items-center justify-center px-4 py-12 md:px-8 md:py-20 relative">
@@ -150,7 +151,7 @@ export async function Hero() {
               )}
               asChild
             >
-              <Link href="/resume.pdf" target="_blank" download>
+              <Link href={`/resume_${locale}.pdf`} target="_blank" download>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
