@@ -35,27 +35,33 @@ export async function Portfolio() {
   ];
 
   return (
-    <section className="px-6 py-12 md:py-16 w-full bg-muted/30" id="portfolio">
-      <div className="w-full max-w-6xl mx-auto">
+    <section className="py-20 px-6" id="portfolio">
+      <div className="max-w-7xl mx-auto">
         <Motion
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{
-            type: "spring",
-            stiffness: 100,
-            damping: 20,
-          }}
+          transition={{ duration: 0.6 }}
         >
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-3">{t("title")}</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              {t("title")}
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               {t("subtitle")}
             </p>
+            <div className="w-16 h-1 bg-primary mx-auto rounded-full mt-6" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
-            {projects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+            {projects.map((project, index) => (
+              <Motion
+                key={project.id}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <ProjectCard project={project} />
+              </Motion>
             ))}
           </div>
         </Motion>

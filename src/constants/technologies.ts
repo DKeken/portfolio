@@ -261,3 +261,34 @@ export const TECHNOLOGY_GROUPS = {
     },
   ],
 };
+
+export const technologies = {
+  frontend: [
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Tailwind CSS",
+    "Tanstack Query",
+    "Zustand",
+    "Shadcn/ui",
+  ],
+  backend: [
+    "Node.js",
+    "NestJS",
+    "Express",
+    "GraphQL",
+    "REST API",
+    "WebSocket",
+    "Microservices",
+  ],
+  database: ["PostgreSQL", "Redis", "Prisma", "Supabase"],
+  tools: [
+    "Git",
+    "Docker",
+    "GitHub Actions",
+    "Vercel",
+    "Turborepo",
+    "ESLint",
+    "Prettier",
+  ],
+};

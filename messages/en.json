@@ -11,7 +11,12 @@
   },
 
   "footer": {
-    "rights": "All rights reserved"
+    "rights": "All rights reserved",
+    "connect": "Connect",
+    "made_with": "Made with",
+    "by_me": "by me",
+    "copyright": "Daniil Shovkunov",
+    "built_with": "Built with"
   },
 
   "navigation": {
@@ -25,15 +30,25 @@
   "vacancy": {
     "name": "Daniil Shovkunov",
     "experience": "Experience",
-    "title": "Desired position and salary",
+    "title": "Open to Work",
+    "subtitle": "Available for exciting opportunities and challenging projects",
     "job_position": "Fullstack Developer",
-
+    "candidate": {
+      "location": "Location",
+      "location_value": "Saint Petersburg, Russia",
+      "age": "Age",
+      "experience": "Experience",
+      "experience_value": "{years} years"
+    },
     "employment_types": {
+      "title": "Employment Types",
       "full_time": "Full-time",
       "full_day": "Full day",
       "remote": "Remote work"
     },
     "salary": {
+      "title": "Salary Expectations",
+      "tooltip": "Currency conversion based on current exchange rates",
       "desired_salary": "Desired salary",
       "monthly": "Monthly",
       "hourly": "Hourly rate"
@@ -54,7 +69,14 @@
     }
   },
   "technologies": {
-    "title": "Technologies",
+    "title": "Tech Stack",
+    "subtitle": "Technologies and tools I work with daily",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Database",
+      "tools": "Tools"
+    },
     "groups": {
       "languages": "Programming Languages",
       "frontend": "Frontend",
@@ -68,7 +90,7 @@
     }
   },
   "additional_info": {
-    "title": "Beyond the Code",
+    "title": "About Me",
     "about_me": {
       "title": "Tech Journey",
       "description": "Fullstack developer focused on practical solutions. Won Nestro Challenge Hackathon 2023, built enterprise blockchain systems, and actively contribute to open source. I enjoy working with modern tech stacks and have experience in both startups and large companies.",

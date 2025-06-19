@@ -10,7 +10,11 @@
     "download_resume": "Скачать резюме"
   },
   "footer": {
-    "rights": "Все права защищены"
+    "rights": "Все права защищены",
+    "connect": "Связаться",
+    "made_with": "Сделано с",
+    "by_me": "мной",
+    "copyright": "Даниил Шовкунов"
   },
   "navigation": {
     "hero": "Главная",
@@ -21,15 +25,26 @@
   },
   "vacancy": {
     "name": "Даниил Шовкунов",
-    "title": "Желаемая должность и зарплата",
+    "title": "Открыт к работе",
+    "subtitle": "Доступен для интересных возможностей и сложных проектов",
     "experience": "Опыт работы",
     "job_position": "Fullstack Разработчик",
+    "candidate": {
+      "location": "Местоположение",
+      "location_value": "Уфа, Россия",
+      "age": "Возраст",
+      "experience": "Опыт",
+      "experience_value": "{years} лет"
+    },
     "employment_types": {
+      "title": "Типы занятости",
       "full_time": "Полная занятость",
       "full_day": "Полный день",
       "remote": "Удаленная работа"
     },
     "salary": {
+      "title": "Зарплатные ожидания",
+      "tooltip": "Конвертация валют основана на текущих курсах",
       "desired_salary": "Желаемая зарплата",
       "monthly": "Ежемесячно",
       "hourly": "Почасовая ставка"
@@ -50,7 +65,14 @@
     }
   },
   "technologies": {
-    "title": "Технологии",
+    "title": "Технический стек",
+    "subtitle": "Технологии и инструменты, с которыми я работаю ежедневно",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Базы данных",
+      "tools": "Инструменты"
+    },
     "groups": {
       "languages": "Языки программирования",
       "frontend": "Фронтенд",
@@ -64,7 +86,7 @@
     }
   },
   "additional_info": {
-    "title": "За пределами кода",
+    "title": "Обо мне",
     "about_me": {
       "title": "Путь в технологиях",
       "description": "Fullstack разработчик, ориентированный на практические решения. Победитель Nestro Challenge Hackathon 2023, разработчик корпоративных блокчейн-систем, активный участник open source. Работаю с современным стеком технологий, имею опыт как в стартапах, так и в крупных компаниях.",
@@ -101,7 +123,31 @@
     "featured_project": "Избранный проект",
     "view_code": "Посмотреть код",
     "live_demo": "Демо-версия",
+    "categories": {
+      "all": "Все",
+      "web": "Веб",
+      "blockchain": "Блокчейн",
+      "app": "Приложения"
+    },
     "projects": {
+      "project1": {
+        "title": "E-commerce платформа",
+        "description": "Современное решение для электронной коммерции с управлением складскими запасами в реальном времени и обработкой платежей",
+        "tags": "Next.js, TypeScript, Stripe, MongoDB",
+        "link": "https://github.com/DKeken/ecommerce-platform"
+      },
+      "project2": {
+        "title": "Блокчейн-проводник",
+        "description": "Комплексный проводник по блокчейну TON с визуализацией транзакций",
+        "tags": "React, Node.js, TON SDK, D3.js",
+        "link": "https://github.com/DKeken/ton-explorer"
+      },
+      "project3": {
+        "title": "Приложение для управления задачами",
+        "description": "Совместное приложение для управления задачами с обновлениями в реальном времени и командными функциями",
+        "tags": "React, Firebase, Tailwind CSS, tRPC",
+        "link": "https://github.com/DKeken/task-manager"
+      },
       "project4": {
         "title": "Корпоративная CRM-платформа",
         "description": "Трансформация монолитного приложения в модульную, масштабируемую систему с использованием микрофронтендов, TypeScript и Effector с возможностями ИИ-прогнозирования",

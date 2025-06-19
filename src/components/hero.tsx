@@ -1,6 +1,6 @@
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Motion, MotionH1, MotionP, MotionSpan } from "@/components/ui/motion";
-import { FaTelegramPlane, FaGithub } from "react-icons/fa";
+import { Motion } from "@/components/ui/motion";
+import { FaTelegramPlane, FaGithub, FaDownload } from "react-icons/fa";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -13,166 +13,116 @@ export async function Hero() {
   const locale = await getLocale();
 
   return (
-    <section className="flex min-h-screen w-full flex-col items-center justify-center px-4 py-12 md:px-8 md:py-20 relative">
-      <div className="mx-auto w-full max-w-3xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col gap-6">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/30 to-background" />
+
+      {/* Content */}
+      <div className="relative z-10 w-full max-w-4xl mx-auto px-6 py-20">
+        <div className="text-center space-y-8">
+          {/* Status badge */}
           <Motion
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{
-              type: "spring",
-              stiffness: 260,
-              damping: 20,
-            }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
           >
             <Badge
-              variant="default"
-              className="inline-flex w-fit items-center gap-2 p-2 text-primary-foreground"
+              variant="secondary"
+              className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium"
             >
-              <div className="h-2 w-2 animate-pulse rounded-full bg-primary-foreground" />
-              <span className="text-xs font-medium sm:text-sm">
-                {t("open_to_offers")}
-              </span>
+              <div className="h-2 w-2 bg-green-500 rounded-full animate-pulse" />
+              {t("open_to_offers")}
             </Badge>
           </Motion>
 
+          {/* Avatar */}
           <Motion
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              type: "spring",
-              stiffness: 100,
-              damping: 20,
-              delay: 0.2,
-            }}
-            className="flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:gap-8"
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
           >
-            <Avatar className="h-20 w-20 rounded-lg border border-border ring-2 ring-primary/20 sm:h-24 sm:w-24">
-              <AvatarImage
-                src="/avatar.jpg"
-                alt="Даниил's avatar"
-                className="object-cover"
-              />
-              <AvatarFallback className="text-2xl font-medium sm:text-3xl">
-                ДШ
-              </AvatarFallback>
-            </Avatar>
-
-            <div className="flex flex-col gap-2">
-              <MotionH1
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{
-                  type: "spring",
-                  stiffness: 100,
-                  damping: 20,
-                  delay: 0.4,
-                }}
-                className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl"
-              >
-                {t("hello_name")}
-                <MotionSpan
-                  initial={{ rotate: 0 }}
-                  animate={{ rotate: [0, -20, 10, -20, 0] }}
-                  transition={{
-                    delay: 1.2,
-                    duration: 1.5,
-                    ease: "easeInOut",
-                  }}
-                  className="inline-block"
-                >
-                  👋
-                </MotionSpan>
-              </MotionH1>
-
-              <MotionP
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{
-                  type: "spring",
-                  stiffness: 100,
-                  damping: 20,
-                  delay: 0.6,
-                }}
-                className="max-w-xl text-base text-muted-foreground sm:text-lg md:text-xl"
-              >
-                {t("developer_description")}
-              </MotionP>
+            <div className="flex justify-center mb-6">
+              <Avatar className="h-32 w-32 border-4 border-background shadow-xl">
+                <AvatarImage
+                  src="/avatar.jpg"
+                  alt="Даниил's avatar"
+                  className="object-cover"
+                />
+                <AvatarFallback className="text-3xl font-bold bg-gradient-to-br from-primary to-primary/80 text-primary-foreground">
+                  ДШ
+                </AvatarFallback>
+              </Avatar>
             </div>
           </Motion>
 
+          {/* Main content */}
           <Motion
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{
-              type: "spring",
-              stiffness: 100,
-              damping: 20,
-              delay: 0.8,
-            }}
-            className="mt-4 flex flex-col gap-3 sm:flex-row sm:gap-4"
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="space-y-6"
           >
-            <Button
-              asChild
-              variant="default"
-              size="lg"
-              className={cn(
-                "flex items-center justify-center gap-2",
-                "w-full sm:w-auto"
-              )}
-            >
-              <Link href="https://t.me/kekenkeken" target="_blank">
-                <FaTelegramPlane className="h-4 w-4" />
-                <span>{t("contact")}</span>
-              </Link>
-            </Button>
+            <div className="space-y-4">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
+                {t("hello_name")}
+                <span className="inline-block ml-2 animate-bounce">👋</span>
+              </h1>
 
-            <Button
-              variant="outline"
-              size="lg"
-              className={cn(
-                "flex items-center justify-center gap-2",
-                "w-full sm:w-auto"
-              )}
-              asChild
-            >
-              <Link href="https://github.com/DKeken" target="_blank">
-                <FaGithub className="h-4 w-4" />
-                <span>{t("learn_more")}</span>
-              </Link>
-            </Button>
+              <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                {t("developer_description")}
+              </p>
+            </div>
 
-            <Button
-              variant="outline"
-              size="lg"
-              className={cn(
-                "flex items-center justify-center gap-2",
-                "w-full sm:w-auto"
-              )}
-              asChild
-            >
-              <Link href={`/resume_${locale}.pdf`} target="_blank" download>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="h-4 w-4"
-                >
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                  <polyline points="7 10 12 15 17 10" />
-                  <line x1="12" y1="15" x2="12" y2="3" />
-                </svg>
-                <span>{t("download_resume")}</span>
-              </Link>
-            </Button>
+            {/* CTA buttons */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8">
+              <Button
+                asChild
+                size="lg"
+                className="h-12 px-8 text-base font-medium min-w-[160px]"
+              >
+                <Link href="https://t.me/kekenkeken" target="_blank">
+                  <FaTelegramPlane className="mr-2 h-5 w-5" />
+                  {t("contact")}
+                </Link>
+              </Button>
+
+              <Button
+                variant="outline"
+                size="lg"
+                className="h-12 px-8 text-base font-medium min-w-[160px]"
+                asChild
+              >
+                <Link href="https://github.com/DKeken" target="_blank">
+                  <FaGithub className="mr-2 h-5 w-5" />
+                  {t("learn_more")}
+                </Link>
+              </Button>
+
+              <Button
+                variant="ghost"
+                size="lg"
+                className="h-12 px-8 text-base font-medium min-w-[160px] border border-dashed border-border hover:border-solid"
+                asChild
+              >
+                <Link href={`/resume_${locale}.pdf`} target="_blank" download>
+                  <FaDownload className="mr-2 h-4 w-4" />
+                  {t("download_resume")}
+                </Link>
+              </Button>
+            </div>
           </Motion>
         </div>
       </div>
-      <ScrollButton text={t("about_me")} id="additional-info" />
+
+      {/* Scroll indicator */}
+      <Motion
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 1 }}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 w-16"
+      >
+        <ScrollButton text={t("about_me")} id="additional-info" />
+      </Motion>
     </section>
   );
 }

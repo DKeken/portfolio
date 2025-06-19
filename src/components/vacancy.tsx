@@ -4,22 +4,13 @@ import { Badge } from "./ui/badge";
 import { Motion } from "./ui/motion";
 import { Suspense } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "./ui/table";
-import { InfoIcon } from "lucide-react";
+import { InfoIcon, MapPin, Clock, Briefcase, DollarSign } from "lucide-react";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "./ui/tooltip";
-import { ScrollArea, ScrollBar } from "./ui/scroll-area";
 
 // Types
 type Currency = "USD" | "EUR" | "RUB" | "GBP";
@@ -109,32 +100,18 @@ const getExchangeRates = async (): Promise<ExchangeRates> => {
 
 // Components
 const SalaryTableSkeleton = () => (
-  <div className="w-full">
-    <div className="flex items-center gap-2 mb-3">
-      <Skeleton className="h-5 w-24 rounded-full" />
-    </div>
-    <div className="border rounded-md">
-      <div className="grid grid-cols-5 p-3 border-b bg-muted/30">
-        <Skeleton className="h-4 w-16" />
-        {Array(4)
-          .fill(null)
-          .map((_, i) => (
-            <Skeleton key={i} className="h-4 w-12 justify-self-end" />
-          ))}
-      </div>
-      {Array(2)
+  <div className="space-y-4">
+    <Skeleton className="h-6 w-32" />
+    <div className="space-y-3">
+      {Array(3)
         .fill(null)
-        .map((_, row) => (
+        .map((_, i) => (
           <div
-            key={row}
-            className="grid grid-cols-5 p-3 border-b last:border-0"
+            key={i}
+            className="flex justify-between items-center p-4 border rounded-lg"
           >
             <Skeleton className="h-4 w-20" />
-            {Array(4)
-              .fill(null)
-              .map((_, i) => (
-                <Skeleton key={i} className="h-4 w-16 justify-self-end" />
-              ))}
+            <Skeleton className="h-4 w-24" />
           </div>
         ))}
     </div>
@@ -144,7 +121,7 @@ const SalaryTableSkeleton = () => (
 const CurrencyBadge = ({ currency }: { currency: Currency }) => (
   <Badge
     variant={currency === BASE_CURRENCY ? "default" : "outline"}
-    className="text-xs font-normal"
+    className="text-xs font-medium"
   >
     {currency}
   </Badge>
@@ -177,71 +154,53 @@ const SalaryTable = async ({
     }).format(amount);
   };
 
-  const SalaryRow = ({
-    type,
-    amount,
-  }: {
-    type: "monthly" | "hourly";
-    amount: number;
-  }) => (
-    <TableRow>
-      <TableCell className="font-medium">
-        <Badge variant="secondary" className="text-xs whitespace-nowrap">
-          {t(`salary.${type}`)}
-        </Badge>
-      </TableCell>
-      {CURRENCIES.map((currency) => (
-        <TableCell
-          key={currency}
-          className="text-right font-medium whitespace-nowrap"
-        >
-          {formatCurrency(convertCurrency(amount, currency), currency)}
-        </TableCell>
-      ))}
-    </TableRow>
-  );
-
   return (
-    <div className="w-full">
-      <TooltipProvider>
-        <div className="flex items-center gap-2 mb-3">
-          <h3 className="text-sm font-medium text-muted-foreground">
-            {t("salary.desired_salary")}
-          </h3>
+    <div className="space-y-6">
+      <div className="flex items-center gap-2">
+        <DollarSign className="h-5 w-5 text-primary" />
+        <h3 className="text-lg font-semibold">{t("salary.title")}</h3>
+        <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
               <InfoIcon className="h-4 w-4 text-muted-foreground cursor-help" />
             </TooltipTrigger>
             <TooltipContent>
-              <p className="text-xs">
-                {t("currency.base_currency", {
-                  currency: t(`currency.${BASE_CURRENCY.toLowerCase()}`),
-                })}
-              </p>
+              <p className="text-sm">{t("salary.tooltip")}</p>
             </TooltipContent>
           </Tooltip>
-        </div>
-      </TooltipProvider>
+        </TooltipProvider>
+      </div>
 
-      <ScrollArea className="w-[400px] sm:w-full whitespace-nowrap rounded-md border">
-        <Table className="min-w-[400px] w-full">
-          <TableHeader className="bg-muted/30">
-            <TableRow>
-              <TableHead className="w-[120px] whitespace-nowrap" />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {Object.entries(SALARY_DATA).map(([type, amount]) => (
+          <Card
+            key={type}
+            className="p-4 border-0 bg-gradient-to-r from-primary/5 to-primary/10"
+          >
+            <div className="flex justify-between items-center mb-3">
+              <Badge variant="secondary" className="text-xs">
+                {t(`salary.${type}`)}
+              </Badge>
+            </div>
+            <div className="space-y-2">
               {CURRENCIES.map((currency) => (
-                <TableHead key={currency} className="text-right">
+                <div
+                  key={currency}
+                  className="flex justify-between items-center"
+                >
                   <CurrencyBadge currency={currency} />
-                </TableHead>
+                  <span className="font-medium">
+                    {formatCurrency(
+                      convertCurrency(amount, currency),
+                      currency
+                    )}
+                  </span>
+                </div>
               ))}
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            <SalaryRow type="monthly" amount={SALARY_DATA.monthly} />
-            <SalaryRow type="hourly" amount={SALARY_DATA.hourly} />
-          </TableBody>
-        </Table>
-        <ScrollBar orientation="horizontal" />
-      </ScrollArea>
+            </div>
+          </Card>
+        ))}
+      </div>
     </div>
   );
 };
@@ -253,61 +212,100 @@ const ExchangeRatesData = async () => {
 
 export async function Vacancy() {
   const t = await getTranslations("vacancy");
-  const birthDate = new Date("2002-04-05");
-  const startWorkDate = new Date("2020-01-01");
 
+  const birthDate = new Date(2002, 4, 5);
+  const startDate = new Date(2019, 6, 1); // July 1, 2021
   const age = calculateAge(birthDate);
-  const experienceYears = getExperienceYears(startWorkDate);
+  const experience = getExperienceYears(startDate);
+  const yearForm = await getYearForm(age);
+
+  const candidateInfo = [
+    {
+      icon: MapPin,
+      label: t("candidate.location"),
+      value: t("candidate.location_value"),
+    },
+    {
+      icon: Clock,
+      label: t("candidate.age"),
+      value: `${age} ${yearForm}`,
+    },
+    {
+      icon: Briefcase,
+      label: t("candidate.experience"),
+      value: t("candidate.experience_value", { years: experience }),
+    },
+  ];
 
   return (
-    <section className="px-6 py-12 md:py-16 w-full" id="vacancy">
-      <div className="w-full max-w-3xl mx-auto">
+    <section className="py-20 px-6" id="vacancy">
+      <div className="max-w-6xl mx-auto">
         <Motion
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{
-            type: "spring",
-            stiffness: 100,
-            damping: 20,
-          }}
+          transition={{ duration: 0.6 }}
         >
-          <Card className="w-full shadow-lg overflow-hidden">
-            <CardHeader className="pb-4">
-              <div className="flex flex-col gap-4">
-                <div className="flex items-center justify-between">
-                  <div className="flex flex-col gap-2">
-                    <CardTitle className="font-bold">{t("title")}</CardTitle>
-                    <div className="text-sm text-muted-foreground">
-                      {t("name")} • {age} {await getYearForm(age)}
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              {t("title")}
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              {t("subtitle")}
+            </p>
+            <div className="w-16 h-1 bg-primary mx-auto rounded-full mt-6" />
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Job Info */}
+            <div className="space-y-8">
+              <Card className="p-6 border-0 shadow-lg">
+                <CardHeader className="p-0 pb-6">
+                  <CardTitle className="text-xl font-semibold flex items-center gap-2">
+                    <Briefcase className="h-5 w-5 text-primary" />
+                    {t(JOB_POSITION.title)}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="p-0 space-y-4">
+                  <div className="space-y-3">
+                    {candidateInfo.map((info, index) => (
+                      <div
+                        key={index}
+                        className="flex items-center gap-3 p-3 rounded-lg bg-muted/30"
+                      >
+                        <info.icon className="h-4 w-4 text-primary" />
+                        <span className="text-sm font-medium text-muted-foreground">
+                          {info.label}:
+                        </span>
+                        <span className="text-sm font-medium">
+                          {info.value}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="pt-4">
+                    <h4 className="text-sm font-medium mb-3">
+                      {t("employment_types.title")}
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {JOB_POSITION.employmentTypes.map((type) => (
+                        <Badge key={type} variant="outline" className="text-xs">
+                          {t(type)}
+                        </Badge>
+                      ))}
                     </div>
                   </div>
-                  <Badge
-                    variant="outline"
-                    className="text-primary border-primary"
-                  >
-                    {t(JOB_POSITION.title)}
-                  </Badge>
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  {t("experience")}: {experienceYears}{" "}
-                  {await getYearForm(experienceYears)}
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {JOB_POSITION.employmentTypes.map((type, index) => (
-                    <Badge key={index} variant="secondary" className="text-xs">
-                      {t(type)}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-            </CardHeader>
+                </CardContent>
+              </Card>
+            </div>
 
-            <CardContent>
+            {/* Salary Info */}
+            <div>
               <Suspense fallback={<SalaryTableSkeleton />}>
                 <ExchangeRatesData />
               </Suspense>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         </Motion>
       </div>
     </section>
