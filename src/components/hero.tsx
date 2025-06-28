@@ -112,17 +112,7 @@ export async function Hero() {
             </div>
           </Motion>
         </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <Motion
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 1 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 w-16"
-      >
-        <ScrollButton text={t("about_me")} id="additional-info" />
-      </Motion>
+    </div>          
     </section>
   );
 }
