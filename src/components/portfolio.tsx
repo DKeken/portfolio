@@ -9,20 +9,13 @@ export async function Portfolio() {
   // Project data structure
   const projects = [
     {
-      id: 4,
-      title: t("projects.project4.title"),
-      description: t("projects.project4.description"),
-      image: "/images/project4.jpg",
-      tags: t("projects.project4.tags").split(","),
-      link: t("projects.project4.link"),
-    },
-    {
-      id: 5,
-      title: t("projects.project5.title"),
-      description: t("projects.project5.description"),
-      image: "/images/project5.jpg",
-      tags: t("projects.project5.tags").split(","),
-      link: t("projects.project5.link"),
+      id: 7,
+      title: t("projects.project7.title"),
+      description: t("projects.project7.description"),
+      image: "/images/project7.png",
+      tags: t("projects.project7.tags").split(","),
+      link: t("projects.project7.link"),
+      isNDA: false,
     },
     {
       id: 6,
@@ -31,6 +24,25 @@ export async function Portfolio() {
       image: "/images/project6.jpg",
       tags: t("projects.project6.tags").split(","),
       link: t("projects.project6.link"),
+      isNDA: false,
+    },
+    {
+      id: 4,
+      title: t("projects.project4.title"),
+      description: t("projects.project4.description"),
+      image: "/images/project4.jpg",
+      tags: t("projects.project4.tags").split(","),
+      link: t("projects.project4.link"),
+      isNDA: true,
+    },
+    {
+      id: 5,
+      title: t("projects.project5.title"),
+      description: t("projects.project5.description"),
+      image: "/images/project5.jpg",
+      tags: t("projects.project5.tags").split(","),
+      link: t("projects.project5.link"),
+      isNDA: true,
     },
   ];
 
@@ -78,6 +90,7 @@ export interface Project {
   image: string;
   tags: string[];
   link: string;
+  isNDA?: boolean;
 }
 
 // Project tag component

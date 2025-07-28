@@ -123,6 +123,10 @@
     "featured_project": "Избранный проект",
     "view_code": "Посмотреть код",
     "live_demo": "Демо-версия",
+    "view_project": "Посмотреть проект",
+    "nda_restricted": "Ограничен НДА",
+    "nda_disclaimer": "Детали проекта не могут быть раскрыты согласно соглашению о неразглашении",
+    "confidential_project": "Конфиденциальный проект",
     "categories": {
       "all": "Все",
       "web": "Веб",
@@ -164,7 +168,13 @@
         "title": "Telegram Mini Apps с блокчейн-интеграцией",
         "description": "Разработка мини-приложений для Telegram с интеграцией блокчейна TON, включая кроссчейновый кошелек-биржу для стейблкоинов",
         "tags": "React, Next.js, TON, Blockchain, Telegram API, TypeScript, Drizzle, NestJS, Redis, PostgreSQL",
-        "link": "https://github.com/DKeken/ton-telegram-apps"
+        "link": "https://t.me/yeprod_bot"
+      },
+      "project7": {
+        "title": "GearAI - Платформа ИИ",
+        "description": "Платформа доступа к 400+ моделям ИИ (GPT-4, Claude, Gemini) без VPN в России с моделью оплаты по запросам",
+        "tags": "Next.js, TypeScript, NestJS, RabbitMQ, PostgreSQL, Redis, Т-Банк API",
+        "link": "https://web.gearai.ru/"
       }
     }
   },

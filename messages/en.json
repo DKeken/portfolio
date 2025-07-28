@@ -127,6 +127,10 @@
     "featured_project": "Featured Project",
     "view_code": "View Code",
     "live_demo": "Live Demo",
+    "view_project": "View Project",
+    "nda_restricted": "Access Restricted",
+    "nda_disclaimer": "Project details cannot be disclosed due to confidentiality agreement",
+    "confidential_project": "Confidential Project",
     "categories": {
       "all": "All",
       "web": "Web",
@@ -168,7 +172,13 @@
         "title": "Telegram Mini Apps with Blockchain",
         "description": "Developed Telegram mini-applications with TON blockchain integration, including a cross-chain wallet-exchange for stablecoins",
         "tags": "React, Next.js, TON, Blockchain, Telegram API, TypeScript, Drizzle, NestJS, Redis, PostgreSQL",
-        "link": "https://github.com/DKeken/ton-telegram-apps"
+        "link": "https://t.me/yeprod_bot"
+      },
+      "project7": {
+        "title": "GearAI - AI Platform",
+        "description": "AI platform providing access to 400+ AI models (GPT-4, Claude, Gemini) without VPN in Russia with pay-per-request pricing model",
+        "tags": "Next.js, TypeScript, NestJS, RabbitMQ, PostgreSQL, Redis, T-Bank API",
+        "link": "https://web.gearai.ru/"
       }
     }
   },

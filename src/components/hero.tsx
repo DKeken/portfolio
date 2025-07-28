@@ -16,7 +16,6 @@ export async function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-background via-muted/30 to-background" />
-
       {/* Content */}
       <div className="relative z-10 w-full max-w-4xl mx-auto px-6 py-20">
         <div className="text-center space-y-8">
@@ -113,16 +112,6 @@ export async function Hero() {
           </Motion>
         </div>
       </div>
-
-      {/* Scroll indicator */}
-      <Motion
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 1 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 w-16"
-      >
-        <ScrollButton text={t("about_me")} id="additional-info" />
-      </Motion>
     </section>
   );
 }
