@@ -1,12 +1,10 @@
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Motion } from "@/components/ui/motion";
 import { FaTelegramPlane, FaGithub, FaDownload } from "react-icons/fa";
-import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { getLocale, getTranslations } from "next-intl/server";
 import Link from "next/link";
-import { ScrollButton } from "@/components/scroll-button";
 
 export async function Hero() {
   const t = await getTranslations("hero");
