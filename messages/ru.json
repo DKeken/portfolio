@@ -176,6 +176,12 @@
         "tags": "Next.js, TypeScript, NestJS, RabbitMQ, PostgreSQL, Redis, Т-Банк API",
         "link": "https://web.gearai.ru/"
       },
+      "project9": {
+        "title": "Корпоративная система БДО",
+        "description": "Огромная система для бизнеса, позволяющая вести учет объектов любого типа через Базу Данных Объектов (БДО). Включает отчеты в виде таблиц, управление мероприятиями, наработки объектов и аналитику для корпоративных операций",
+        "tags": "Next.js, NestJS, RabbitMQ, TypeScript, PostgreSQL, Redis, Turborepo, Микросервисы, Аналитика",
+        "link": "https://github.com/DKeken/enterprise-odb-system"
+      },
       "project8": {
         "title": "BTConnect - Платформа маркетплейса",
         "description": "Маркетплейс товаров по типу Авито с блокчейн-интеграцией на BNB. Доступ к кабинету продавца открывается только после покупки NFT-пропуска. Микросервисная архитектура для надёжных P2P транзакций",

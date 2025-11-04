@@ -9,6 +9,15 @@ export async function Portfolio() {
   // Project data structure
   const projects = [
     {
+      id: 9,
+      title: t("projects.project9.title"),
+      description: t("projects.project9.description"),
+      image: "/images/project9.png",
+      tags: t("projects.project9.tags").split(","),
+      link: t("projects.project9.link"),
+      isNDA: true,
+    },
+    {
       id: 8,
       title: t("projects.project8.title"),
       description: t("projects.project8.description"),
