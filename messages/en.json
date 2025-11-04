@@ -179,6 +179,12 @@
         "description": "AI platform providing access to 400+ AI models (GPT-4, Claude, Gemini) without VPN in Russia with pay-per-request pricing model",
         "tags": "Next.js, TypeScript, NestJS, RabbitMQ, PostgreSQL, Redis, T-Bank API",
         "link": "https://web.gearai.ru/"
+      },
+      "project8": {
+        "title": "BTConnect - Marketplace Platform",
+        "description": "Avito-like marketplace for buying and selling physical goods with blockchain integration. Seller dashboard access requires purchasing an NFT pass. Built with microservices architecture on BNB chain for secure P2P transactions",
+        "tags": "Next.js, NestJS, RabbitMQ, TypeScript, BNB, Blockchain, NFT, PostgreSQL, Redis, Turborepo",
+        "link": "https://btconnect.pro/"
       }
     }
   },
