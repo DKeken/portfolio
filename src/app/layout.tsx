@@ -22,8 +22,33 @@ export async function generateMetadata() {
   const locale = await getLocale();
   const t = await getTranslations({ locale });
 
+  const baseUrl =
+    process.env.NEXT_PUBLIC_BASE_URL || "https://daniilschovkunov.dev";
+  const screenshotUrl = `${baseUrl}/images/screenshot.png`;
+
   return {
     title: t("title"),
+    description: t("hero.developer_description"),
+    openGraph: {
+      title: t("title"),
+      description: t("hero.developer_description"),
+      images: [
+        {
+          url: screenshotUrl,
+          width: 1920,
+          height: 1080,
+          alt: t("title"),
+        },
+      ],
+      type: "website",
+      locale: locale,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("title"),
+      description: t("hero.developer_description"),
+      images: [screenshotUrl],
+    },
   };
 }
 
@@ -45,6 +70,7 @@ export default async function RootLayout({
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover"
         />
+        <link rel="manifest" href="/manifest.json" />
       </head>
       <body className={`${montserrat.variable} h-full w-full`}>
         <I18nProvider>
