@@ -197,6 +197,12 @@
         "description": "Cryptocurrency wallet platform with exchange functionality, gambling elements, and referral program. Comprehensive solution for crypto transactions, trading, and engagement",
         "tags": "Next.js, TypeScript, Blockchain, Cryptocurrency, Wallet, Exchange, NestJS, PostgreSQL, Redis",
         "link": "https://gorrila.ru/"
+      },
+      "project11": {
+        "title": "BestProject - Real Estate Management Platform",
+        "description": "Comprehensive real estate management platform with centralized object database, flexible task system, and multi-organization support. Features include object registry, task management, map visualization, file storage, and REST API access",
+        "tags": "Next.js, TypeScript, Real Estate, Property Management, REST API, PostgreSQL, Multi-tenant, Task Management",
+        "link": "https://bestproject.app/"
       }
     }
   },

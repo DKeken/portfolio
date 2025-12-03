@@ -193,6 +193,12 @@
         "description": "Платформа-кошелек криптовалют с обменом, элементами gambling и реферальной программой. Комплексное решение для крипто-транзакций, торговли и взаимодействия",
         "tags": "Next.js, TypeScript, Blockchain, Cryptocurrency, Wallet, Exchange, NestJS, PostgreSQL, Redis",
         "link": "https://gorrila.ru/"
+      },
+      "project11": {
+        "title": "BestProject - Платформа управления недвижимостью",
+        "description": "Комплексная платформа для управления недвижимостью с централизованной базой объектов, гибкой системой задач и мультиорганизационностью. Включает реестр объектов, управление задачами, карту объектов, файловое хранилище и REST API",
+        "tags": "Next.js, TypeScript, Недвижимость, Управление недвижимостью, REST API, PostgreSQL, Multi-tenant, Задачи",
+        "link": "https://bestproject.app/"
       }
     }
   },
