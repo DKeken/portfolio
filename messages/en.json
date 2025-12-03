@@ -191,6 +191,12 @@
         "description": "Avito-like marketplace for buying and selling physical goods with blockchain integration. Seller dashboard access requires purchasing an NFT pass. Built with microservices architecture on BNB chain for secure P2P transactions",
         "tags": "Next.js, NestJS, RabbitMQ, TypeScript, BNB, Blockchain, NFT, PostgreSQL, Redis, Turborepo",
         "link": "https://btconnect.pro/"
+      },
+      "project10": {
+        "title": "Gorrila - Cryptocurrency Wallet Platform",
+        "description": "Cryptocurrency wallet platform with exchange functionality, gambling elements, and referral program. Comprehensive solution for crypto transactions, trading, and engagement",
+        "tags": "Next.js, TypeScript, Blockchain, Cryptocurrency, Wallet, Exchange, NestJS, PostgreSQL, Redis",
+        "link": "https://gorrila.ru/"
       }
     }
   },

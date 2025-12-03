@@ -187,6 +187,12 @@
         "description": "Маркетплейс товаров по типу Авито с блокчейн-интеграцией на BNB. Доступ к кабинету продавца открывается только после покупки NFT-пропуска. Микросервисная архитектура для надёжных P2P транзакций",
         "tags": "Next.js, NestJS, RabbitMQ, TypeScript, BNB, Blockchain, NFT, PostgreSQL, Redis, Turborepo",
         "link": "https://btconnect.pro/"
+      },
+      "project10": {
+        "title": "Gorrila - Платформа-кошелек криптовалют",
+        "description": "Платформа-кошелек криптовалют с обменом, элементами gambling и реферальной программой. Комплексное решение для крипто-транзакций, торговли и взаимодействия",
+        "tags": "Next.js, TypeScript, Blockchain, Cryptocurrency, Wallet, Exchange, NestJS, PostgreSQL, Redis",
+        "link": "https://gorrila.ru/"
       }
     }
   },
