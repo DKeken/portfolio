@@ -16,6 +16,11 @@ interface ThemeSwitcherProps {
 export function ThemeSwitcher({ className }: ThemeSwitcherProps) {
   const { setTheme, resolvedTheme } = useTheme();
   const [isPending, startTransition] = useTransition();
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const toggleTheme = React.useCallback(() => {
     startTransition(() => {
@@ -34,7 +39,7 @@ export function ThemeSwitcher({ className }: ThemeSwitcherProps) {
       className={cn("w-[40px] h-[40px]  ", className)}
     >
       <div className="relative w-6 h-6 flex items-center justify-center">
-        {resolvedTheme === "light" ? (
+        {mounted && (resolvedTheme === "light" ? (
           <motion.div
             initial={{ scale: 0.5, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -54,7 +59,7 @@ export function ThemeSwitcher({ className }: ThemeSwitcherProps) {
           >
             <Moon className="h-5 w-5" strokeWidth={1.5} />
           </motion.div>
-        )}
+        ))}
 
         {isPending && (
           <span className="absolute inset-0 flex items-center justify-center bg-background/50 rounded-full">

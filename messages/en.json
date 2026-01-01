@@ -2,6 +2,7 @@
   "hero": {
     "open_to_offers": "Open to offers",
     "hello_name": "Hi, I'm Daniil",
+    "role_description": "Fullstack Developer",
     "developer_description": "Fullstack developer specializing in building modern web applications",
     "contact": "Contact",
     "learn_more": "Learn more",
@@ -75,7 +76,17 @@
       "frontend": "Frontend",
       "backend": "Backend",
       "database": "Database",
-      "tools": "Tools"
+      "devops": "DevOps",
+      "tools": "Tools",
+      "blockchain": "Blockchain"
+    },
+    "descriptions": {
+      "frontend": "Building immersive and responsive user interfaces.",
+      "backend": "Robust server-side logic and API development.",
+      "database": "Efficient data modeling and storage solutions.",
+      "devops": "Infrastructure as code and automated deployment.",
+      "tools": "Testing, linting, and workflow optimization.",
+      "blockchain": "Smart contract development, dApps, and blockchain integration."
     },
     "groups": {
       "languages": "Programming Languages",
@@ -137,71 +148,72 @@
       "blockchain": "Blockchain",
       "app": "Apps"
     },
+    "empty": "No projects found",
     "projects": {
       "project1": {
         "title": "E-commerce Platform",
-        "description": "A modern e-commerce solution with real-time inventory management and payment processing",
-        "tags": "Next.js, TypeScript, Stripe, MongoDB",
+        "description": "Scalable e-commerce platform with microservices architecture. Features real-time inventory management, Stripe payment integration, and advanced product filtering system.",
+        "tags": "Next.js, TypeScript, Microservices, Stripe, MongoDB, Redis, Docker",
         "link": "https://github.com/DKeken/ecommerce-platform"
       },
       "project2": {
-        "title": "Blockchain Explorer",
-        "description": "A comprehensive blockchain explorer for TON network with transaction visualization",
-        "tags": "React, Node.js, TON SDK, D3.js",
+        "title": "TON Blockchain Explorer",
+        "description": "High-performance block explorer for TON network. Provides real-time transaction graph visualization, deep smart contract analysis, and network activity monitoring.",
+        "tags": "React, Node.js, Microservices, TON SDK, D3.js, WebSocket, PostgreSQL",
         "link": "https://github.com/DKeken/ton-explorer"
       },
       "project3": {
         "title": "Task Management App",
-        "description": "Collaborative task management application with real-time updates and team features",
-        "tags": "React, Firebase, Tailwind CSS, tRPC",
+        "description": "Collaborative project management platform with real-time synchronization. Supports Kanban boards, team chats, and workflow automation via notification microservices.",
+        "tags": "React, Firebase, Microservices, Tailwind CSS, tRPC, WebSocket",
         "link": "https://github.com/DKeken/task-manager"
       },
       "project4": {
         "title": "Enterprise CRM Platform",
-        "description": "Transformed a monolithic application into a modular, scalable system using microfrontends, TypeScript, and Effector with AI prediction capabilities",
-        "tags": "React, TypeScript, Effector, Vite, Kubernetes, GitLab CI/CD",
+        "description": "Transformation of a monolith into a distributed system with microfrontends and microservices. Implemented AI module for predictive sales analytics and customer service automation.",
+        "tags": "React, TypeScript, Microservices, Microfrontends, Effector, Kubernetes, GitLab CI/CD",
         "link": "https://github.com/DKeken/crm-platform"
       },
       "project5": {
-        "title": "Big Data CRUD Application",
-        "description": "Flexible tool for analyzing and processing user data with type-safe API communication and efficient database operations",
-        "tags": "Next.js, tRPC, Prisma, TypeScript, BFF",
+        "title": "Big Data Analysis Platform",
+        "description": "High-load system for processing and analyzing large volumes of user data. Architecture built on microservices for parallel data stream processing using tRPC for type-safe API.",
+        "tags": "Next.js, tRPC, Microservices, Prisma, TypeScript, ClickHouse, Redis",
         "link": "https://github.com/DKeken/data-processor"
       },
       "project6": {
-        "title": "Telegram Mini Apps with Blockchain",
-        "description": "Developed Telegram mini-applications with TON blockchain integration, including a cross-chain wallet-exchange for stablecoins",
-        "tags": "React, Next.js, TON, Blockchain, Telegram API, TypeScript, Drizzle, NestJS, Redis, PostgreSQL",
+        "title": "Telegram Mini Apps Ecosystem",
+        "description": "Series of Telegram mini-apps with deep TON blockchain integration. Includes non-custodial crypto wallet, P2P exchange, and social mechanics implemented via microservices architecture.",
+        "tags": "React, Next.js, TON, Microservices, Telegram API, NestJS, Redis, PostgreSQL",
         "link": "https://t.me/yeprod_bot"
       },
       "project7": {
-        "title": "GearAI - AI Platform",
-        "description": "AI platform providing access to 400+ AI models (GPT-4, Claude, Gemini) without VPN in Russia with pay-per-request pricing model",
-        "tags": "Next.js, TypeScript, NestJS, RabbitMQ, PostgreSQL, Redis, T-Bank API",
+        "title": "GearAI - AI Aggregator",
+        "description": "Unified API gateway and platform for accessing 40+ LLM models (GPT-4, Claude 3, Gemini). Microservices architecture ensures load balancing and fault tolerance when working with foreign providers.",
+        "tags": "Next.js, NestJS, Microservices, RabbitMQ, PostgreSQL, Redis, Docker, AI/ML",
         "link": "https://web.gearai.ru/"
       },
       "project9": {
-        "title": "Enterprise Object Database System",
-        "description": "Comprehensive business management system for tracking any type of objects with Object Database (ODB) functionality. Features include tabular reports, event management, object developments, and analytics for enterprise operations",
-        "tags": "Next.js, NestJS, RabbitMQ, TypeScript, PostgreSQL, Redis, Turborepo, Microservices, Analytics",
+        "title": "Enterprise BDO System",
+        "description": "Corporate ERP system for managing distributed assets and business objects. Built on event-driven microservices architecture using RabbitMQ for message delivery guarantees.",
+        "tags": "Next.js, NestJS, Microservices, RabbitMQ, TypeScript, PostgreSQL, Redis, Turborepo",
         "link": "https://github.com/DKeken/enterprise-odb-system"
       },
       "project8": {
-        "title": "BTConnect - Marketplace Platform",
-        "description": "Avito-like marketplace for buying and selling physical goods with blockchain integration. Seller dashboard access requires purchasing an NFT pass. Built with microservices architecture on BNB chain for secure P2P transactions",
-        "tags": "Next.js, NestJS, RabbitMQ, TypeScript, BNB, Blockchain, NFT, PostgreSQL, Redis, Turborepo",
+        "title": "BTConnect Marketplace",
+        "description": "Decentralized marketplace for physical goods with crypto payments. Smart contracts on BNB Chain for escrow deals and microservices for product indexing and order management.",
+        "tags": "Next.js, NestJS, Microservices, RabbitMQ, BNB Chain, Smart Contracts, PostgreSQL",
         "link": "https://btconnect.pro/"
       },
       "project10": {
-        "title": "Gorrila - Cryptocurrency Wallet Platform",
-        "description": "Cryptocurrency wallet platform with exchange functionality, gambling elements, and referral program. Comprehensive solution for crypto transactions, trading, and engagement",
-        "tags": "Next.js, TypeScript, Blockchain, Cryptocurrency, Wallet, Exchange, NestJS, PostgreSQL, Redis",
+        "title": "Gorrila Crypto Wallet",
+        "description": "Multi-currency crypto wallet with built-in exchange and P2P platform. Microservices architecture ensures transaction security and high-speed balance updates via WebSocket.",
+        "tags": "Next.js, NestJS, Microservices, Blockchain, DeFi, PostgreSQL, Redis, WebSocket",
         "link": "https://gorrila.ru/"
       },
       "project11": {
-        "title": "BestProject - Real Estate Management Platform",
-        "description": "Comprehensive real estate management platform with centralized object database, flexible task system, and multi-organization support. Features include object registry, task management, map visualization, file storage, and REST API access",
-        "tags": "Next.js, TypeScript, Real Estate, Property Management, REST API, PostgreSQL, Multi-tenant, Task Management",
+        "title": "BestProject Real Estate",
+        "description": "SaaS platform for real estate agencies with multi-tenant architecture. Includes CRM, object management, document generation, and integration with advertising platforms via microservices.",
+        "tags": "Next.js, TypeScript, Microservices, SaaS, PostgreSQL, Multi-tenant, S3, Docker",
         "link": "https://bestproject.app/"
       }
     }

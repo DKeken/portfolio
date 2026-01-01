@@ -1,4 +1,4 @@
-import { Montserrat } from "next/font/google";
+import { Montserrat, JetBrains_Mono } from "next/font/google";
 import { getLocale, getTranslations } from "next-intl/server";
 import { ThemeProvider } from "@/components/providers/with-theme";
 import { I18nProvider } from "@/components/providers/with-i18n";
@@ -9,6 +9,8 @@ import "./globals.css";
 import { ThemeSwitcher } from "@/components/ui/theme-switcher";
 import { LocaleSwitcher } from "@/components/ui/locale-switcher";
 
+import { SITE_CONFIG } from "@/constants/links";
+
 const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -18,13 +20,18 @@ const montserrat = Montserrat({
   fallback: ["sans-serif"],
 });
 
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono",
+  display: "swap",
+});
+
 export async function generateMetadata() {
   const locale = await getLocale();
   const t = await getTranslations({ locale });
 
-  const baseUrl =
-    process.env.NEXT_PUBLIC_BASE_URL || "https://daniilschovkunov.dev";
-  const screenshotUrl = `${baseUrl}/images/screenshot.png`;
+  const baseUrl = SITE_CONFIG.BASE_URL;
+  const screenshotUrl = `${baseUrl}${SITE_CONFIG.SCREENSHOT_PATH}`;
 
   return {
     title: t("title"),
@@ -72,15 +79,17 @@ export default async function RootLayout({
         />
         <link rel="manifest" href="/manifest.json" />
       </head>
-      <body className={`${montserrat.variable} h-full w-full`}>
+      <body
+        className={`${montserrat.variable} ${jetbrainsMono.variable} h-full w-full font-sans`}
+      >
         <I18nProvider>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
-            disableTransitionOnChange
             enableSystem
+            disableTransitionOnChange
           >
-            <div className="fixed top-4 right-4 z-50 flex gap-1 items-center justify-center">
+            <div className="fixed top-6 right-6 z-50 flex gap-2 items-center justify-center p-1.5 rounded-full bg-background/80 backdrop-blur-sm border border-border/50 shadow-sm">
               <LocaleSwitcher />
               <ThemeSwitcher />
             </div>

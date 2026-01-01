@@ -2,6 +2,7 @@
   "hero": {
     "open_to_offers": "Открыт к предложениям",
     "hello_name": "Привет, я Даниил",
+    "role_description": "Fullstack Разработчик",
     "developer_description": "Fullstack разработчик, специализирующийся на создании современных веб-приложений",
     "contact": "Связаться",
     "learn_more": "Узнать больше",
@@ -71,7 +72,17 @@
       "frontend": "Frontend",
       "backend": "Backend",
       "database": "Базы данных",
-      "tools": "Инструменты"
+      "devops": "DevOps",
+      "tools": "Инструменты",
+      "blockchain": "Блокчейн"
+    },
+    "descriptions": {
+      "frontend": "Разработка впечатляющих и отзывчивых пользовательских интерфейсов.",
+      "backend": "Надежная серверная логика и разработка API.",
+      "database": "Эффективное моделирование данных и решения для хранения.",
+      "devops": "Инфраструктура как код и автоматизация развертывания.",
+      "tools": "Тестирование, линтинг и оптимизация рабочих процессов.",
+      "blockchain": "Разработка смарт-контрактов, dApps и интеграция с блокчейн-сетями."
     },
     "groups": {
       "languages": "Языки программирования",
@@ -133,71 +144,72 @@
       "blockchain": "Блокчейн",
       "app": "Приложения"
     },
+    "empty": "Проекты не найдены",
     "projects": {
       "project1": {
         "title": "E-commerce платформа",
-        "description": "Современное решение для электронной коммерции с управлением складскими запасами в реальном времени и обработкой платежей",
-        "tags": "Next.js, TypeScript, Stripe, MongoDB",
+        "description": "Масштабируемая E-commerce платформа с микросервисной архитектурой. Реализовано управление товарными запасами в реальном времени, интеграция платежных шлюзов Stripe и сложная система фильтрации товаров.",
+        "tags": "Next.js, TypeScript, Microservices, Stripe, MongoDB, Redis, Docker",
         "link": "https://github.com/DKeken/ecommerce-platform"
       },
       "project2": {
-        "title": "Блокчейн-проводник",
-        "description": "Комплексный проводник по блокчейну TON с визуализацией транзакций",
-        "tags": "React, Node.js, TON SDK, D3.js",
+        "title": "TON Blockchain Explorer",
+        "description": "Высокопроизводительный обозреватель блоков для сети TON. Обеспечивает визуализацию графа транзакций в реальном времени, детальный анализ смарт-контрактов и мониторинг сетевой активности.",
+        "tags": "React, Node.js, Microservices, TON SDK, D3.js, WebSocket, PostgreSQL",
         "link": "https://github.com/DKeken/ton-explorer"
       },
       "project3": {
-        "title": "Приложение для управления задачами",
-        "description": "Совместное приложение для управления задачами с обновлениями в реальном времени и командными функциями",
-        "tags": "React, Firebase, Tailwind CSS, tRPC",
+        "title": "Система управления задачами",
+        "description": "Коллаборативная платформа для управления проектами с real-time синхронизацией. Поддерживает канбан-доски, командные чаты и автоматизацию рабочих процессов через микросервисы уведомлений.",
+        "tags": "React, Firebase, Microservices, Tailwind CSS, tRPC, WebSocket",
         "link": "https://github.com/DKeken/task-manager"
       },
       "project4": {
-        "title": "Корпоративная CRM-платформа",
-        "description": "Трансформация монолитного приложения в модульную, масштабируемую систему с использованием микрофронтендов, TypeScript и Effector с возможностями ИИ-прогнозирования",
-        "tags": "React, TypeScript, Effector, Vite, Kubernetes, GitLab CI/CD",
+        "title": "Корпоративная CRM-система",
+        "description": "Трансформация монолита в распределенную систему с микрофронтендами и микросервисами. Внедрен AI-модуль для предиктивной аналитики продаж и автоматизации клиентского сервиса.",
+        "tags": "React, TypeScript, Microservices, Microfrontends, Effector, Kubernetes, GitLab CI/CD",
         "link": "https://github.com/DKeken/crm-platform"
       },
       "project5": {
-        "title": "CRUD-приложение для работы с большими данными",
-        "description": "Гибкий инструмент для анализа и обработки пользовательских данных с типобезопасным API и эффективными операциями с базой данных",
-        "tags": "Next.js, tRPC, Prisma, TypeScript, BFF",
+        "title": "Платформа анализа больших данных",
+        "description": "Высоконагруженная система для обработки и анализа больших объемов пользовательских данных. Архитектура построена на микросервисах для параллельной обработки потоков данных с использованием tRPC для типобезопасного API.",
+        "tags": "Next.js, tRPC, Microservices, Prisma, TypeScript, ClickHouse, Redis",
         "link": "https://github.com/DKeken/data-processor"
       },
       "project6": {
-        "title": "Telegram Mini Apps с блокчейн-интеграцией",
-        "description": "Разработка мини-приложений для Telegram с интеграцией блокчейна TON, включая кроссчейновый кошелек-биржу для стейблкоинов",
-        "tags": "React, Next.js, TON, Blockchain, Telegram API, TypeScript, Drizzle, NestJS, Redis, PostgreSQL",
+        "title": "Экосистема Telegram Mini Apps",
+        "description": "Серия мини-приложений для Telegram с глубокой интеграцией TON блокчейна. Включает некастодиальный криптокошелек, P2P-обменник и социальные механики, реализованные через микросервисную архитектуру.",
+        "tags": "React, Next.js, TON, Microservices, Telegram API, NestJS, Redis, PostgreSQL",
         "link": "https://t.me/yeprod_bot"
       },
       "project7": {
-        "title": "GearAI - Платформа ИИ",
-        "description": "Платформа доступа к 400+ моделям ИИ (GPT-4, Claude, Gemini) без VPN в России с моделью оплаты по запросам",
-        "tags": "Next.js, TypeScript, NestJS, RabbitMQ, PostgreSQL, Redis, Т-Банк API",
+        "title": "GearAI - Агрегатор нейросетей",
+        "description": "Единый API-шлюз и платформа для доступа к 40+ LLM моделям (GPT-4, Claude 3, Gemini). Микросервисная архитектура обеспечивает балансировку нагрузки и отказоустойчивость при работе с зарубежными провайдерами.",
+        "tags": "Next.js, NestJS, Microservices, RabbitMQ, PostgreSQL, Redis, Docker, AI/ML",
         "link": "https://web.gearai.ru/"
       },
       "project9": {
-        "title": "Корпоративная система БДО",
-        "description": "Огромная система для бизнеса, позволяющая вести учет объектов любого типа через Базу Данных Объектов (БДО). Включает отчеты в виде таблиц, управление мероприятиями, наработки объектов и аналитику для корпоративных операций",
-        "tags": "Next.js, NestJS, RabbitMQ, TypeScript, PostgreSQL, Redis, Turborepo, Микросервисы, Аналитика",
+        "title": "Enterprise BDO System",
+        "description": "Корпоративная ERP-система для управления распределенными активами и бизнес-объектами. Построена на базе событийно-ориентированной микросервисной архитектуры с использованием RabbitMQ для гарантии доставки сообщений.",
+        "tags": "Next.js, NestJS, Microservices, RabbitMQ, TypeScript, PostgreSQL, Redis, Turborepo",
         "link": "https://github.com/DKeken/enterprise-odb-system"
       },
       "project8": {
-        "title": "BTConnect - Платформа маркетплейса",
-        "description": "Маркетплейс товаров по типу Авито с блокчейн-интеграцией на BNB. Доступ к кабинету продавца открывается только после покупки NFT-пропуска. Микросервисная архитектура для надёжных P2P транзакций",
-        "tags": "Next.js, NestJS, RabbitMQ, TypeScript, BNB, Blockchain, NFT, PostgreSQL, Redis, Turborepo",
+        "title": "BTConnect Marketplace",
+        "description": "Децентрализованный маркетплейс физических товаров с оплатой в крипте. Смарт-контракты на BNB Chain для эскроу-сделок и микросервисы для индексации товаров и управления заказами.",
+        "tags": "Next.js, NestJS, Microservices, RabbitMQ, BNB Chain, Smart Contracts, PostgreSQL",
         "link": "https://btconnect.pro/"
       },
       "project10": {
-        "title": "Gorrila - Платформа-кошелек криптовалют",
-        "description": "Платформа-кошелек криптовалют с обменом, элементами gambling и реферальной программой. Комплексное решение для крипто-транзакций, торговли и взаимодействия",
-        "tags": "Next.js, TypeScript, Blockchain, Cryptocurrency, Wallet, Exchange, NestJS, PostgreSQL, Redis",
+        "title": "Gorrila Crypto Wallet",
+        "description": "Мультивалютный криптокошелек с встроенным обменником и P2P-платформой. Микросервисная архитектура обеспечивает безопасность транзакций и высокую скорость обновления балансов через WebSocket.",
+        "tags": "Next.js, NestJS, Microservices, Blockchain, DeFi, PostgreSQL, Redis, WebSocket",
         "link": "https://gorrila.ru/"
       },
       "project11": {
-        "title": "BestProject - Платформа управления недвижимостью",
-        "description": "Комплексная платформа для управления недвижимостью с централизованной базой объектов, гибкой системой задач и мультиорганизационностью. Включает реестр объектов, управление задачами, карту объектов, файловое хранилище и REST API",
-        "tags": "Next.js, TypeScript, Недвижимость, Управление недвижимостью, REST API, PostgreSQL, Multi-tenant, Задачи",
+        "title": "BestProject Real Estate",
+        "description": "SaaS-платформа для агентств недвижимости с мульти-тенант архитектурой. Включает CRM, управление объектами, генерацию документов и интеграцию с рекламными площадками через микросервисы.",
+        "tags": "Next.js, TypeScript, Microservices, SaaS, PostgreSQL, Multi-tenant, S3, Docker",
         "link": "https://bestproject.app/"
       }
     }

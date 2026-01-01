@@ -5,6 +5,7 @@ import { Motion } from "./ui/motion";
 import { Suspense } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { InfoIcon, MapPin, Clock, Briefcase, DollarSign } from "lucide-react";
+import { PERSONAL_INFO } from "@/constants/personal";
 import {
   Tooltip,
   TooltipContent,
@@ -16,7 +17,8 @@ import {
 type Currency = "USD" | "EUR" | "RUB" | "GBP";
 
 interface SalaryData {
-  [key: string]: number;
+  monthly: number;
+  hourly: number;
 }
 
 interface ExchangeRates {
@@ -34,8 +36,8 @@ const JOB_POSITION = {
 } as const;
 
 const SALARY_DATA: SalaryData = {
-  monthly: 200000,
-  hourly: 2250,
+  monthly: PERSONAL_INFO.SALARY.MONTHLY_RUB,
+  hourly: PERSONAL_INFO.SALARY.HOURLY_RUB,
 };
 
 const CURRENCIES: Currency[] = ["RUB", "USD", "EUR", "GBP"];
@@ -84,7 +86,7 @@ const getExchangeRates = async (): Promise<ExchangeRates> => {
     const response = await fetch(
       "https://api.exchangerate-api.com/v4/latest/RUB",
       {
-        next: { revalidate: 3600, tags: ["exchange-rates"] },
+        next: { revalidate: 3600 },
       }
     );
 
@@ -156,50 +158,70 @@ const SalaryTable = async ({
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center gap-2">
-        <DollarSign className="h-5 w-5 text-primary" />
-        <h3 className="text-lg font-semibold">{t("salary.title")}</h3>
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <InfoIcon className="h-4 w-4 text-muted-foreground cursor-help" />
-            </TooltipTrigger>
-            <TooltipContent>
-              <p className="text-sm">{t("salary.tooltip")}</p>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {Object.entries(SALARY_DATA).map(([type, amount]) => (
-          <Card
-            key={type}
-            className="p-4 border-0 bg-gradient-to-r from-primary/5 to-primary/10"
-          >
-            <div className="flex justify-between items-center mb-3">
-              <Badge variant="secondary" className="text-xs">
-                {t(`salary.${type}`)}
-              </Badge>
-            </div>
-            <div className="space-y-2">
-              {CURRENCIES.map((currency) => (
-                <div
-                  key={currency}
-                  className="flex justify-between items-center"
+      <div className="grid gap-4">
+        <div className="space-y-3">
+          <div className="flex items-center justify-between mb-2">
+            <Badge
+              variant="outline"
+              className="px-3 py-1 font-medium border-primary/20 bg-primary/5 text-primary"
+            >
+              {t("salary.monthly")}
+            </Badge>
+          </div>
+          <div className="space-y-3">
+            {CURRENCIES.map((currency) => (
+              <div
+                key={currency}
+                className="flex justify-between items-center p-3 rounded-lg bg-muted/30 hover:bg-muted/50 transition-colors group"
+              >
+                <CurrencyBadge currency={currency} />
+                <span
+                  className={`font-bold tabular-nums text-lg ${
+                    currency === BASE_CURRENCY
+                      ? "text-foreground"
+                      : "text-muted-foreground group-hover:text-foreground transition-colors"
+                  }`}
                 >
-                  <CurrencyBadge currency={currency} />
-                  <span className="font-medium">
-                    {formatCurrency(
-                      convertCurrency(amount, currency),
-                      currency
-                    )}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </Card>
-        ))}
+                  {formatCurrency(
+                    convertCurrency(SALARY_DATA.monthly, currency),
+                    currency
+                  )}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="border-t border-border/40 my-2" />
+
+        <div className="space-y-3">
+          <div className="flex items-center justify-between mb-2">
+            <Badge
+              variant="outline"
+              className="px-3 py-1 font-medium border-primary/20 bg-primary/5 text-primary"
+            >
+              {t("salary.hourly")}
+            </Badge>
+          </div>
+          <div className="grid grid-cols-2 gap-3">
+            {CURRENCIES.map((currency) => (
+              <div
+                key={currency}
+                className="flex justify-between items-center p-2 rounded-lg bg-muted/20 hover:bg-muted/40 transition-colors"
+              >
+                <span className="text-xs font-medium text-muted-foreground">
+                  {currency}
+                </span>
+                <span className="font-semibold text-sm tabular-nums">
+                  {formatCurrency(
+                    convertCurrency(SALARY_DATA.hourly, currency),
+                    currency
+                  )}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -213,8 +235,8 @@ const ExchangeRatesData = async () => {
 export async function Vacancy() {
   const t = await getTranslations("vacancy");
 
-  const birthDate = new Date(2002, 4, 5);
-  const startDate = new Date(2019, 6, 1); // July 1, 2021
+  const birthDate = PERSONAL_INFO.BIRTH_DATE;
+  const startDate = PERSONAL_INFO.CAREER_START_DATE;
   const age = calculateAge(birthDate);
   const experience = getExperienceYears(startDate);
   const yearForm = await getYearForm(age);
@@ -246,50 +268,70 @@ export async function Vacancy() {
           transition={{ duration: 0.6 }}
         >
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              {t("title")}
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              {t("subtitle")}
-            </p>
-            <div className="w-16 h-1 bg-primary mx-auto rounded-full mt-6" />
+            <Motion
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">
+                {t("title")}
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+                {t("subtitle")}
+              </p>
+            </Motion>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Job Info */}
-            <div className="space-y-8">
-              <Card className="p-6 border-0 shadow-lg">
-                <CardHeader className="p-0 pb-6">
-                  <CardTitle className="text-xl font-semibold flex items-center gap-2">
-                    <Briefcase className="h-5 w-5 text-primary" />
+            <Motion
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="space-y-8"
+            >
+              <Card className="h-full border border-border/40 shadow-sm bg-background/50 backdrop-blur-sm">
+                <CardHeader className="pb-6 border-b border-border/40">
+                  <CardTitle className="text-xl font-bold flex items-center gap-3">
+                    <div className="p-2 rounded-lg bg-primary/10 text-primary">
+                      <Briefcase className="h-5 w-5" />
+                    </div>
                     {t(JOB_POSITION.title)}
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="p-0 space-y-4">
-                  <div className="space-y-3">
+                <CardContent className="p-6 space-y-8">
+                  <div className="space-y-4">
                     {candidateInfo.map((info, index) => (
                       <div
                         key={index}
-                        className="flex items-center gap-3 p-3 rounded-lg bg-muted/30"
+                        className="flex items-center justify-between p-3 rounded-lg hover:bg-muted/50 transition-colors border border-transparent hover:border-border/40"
                       >
-                        <info.icon className="h-4 w-4 text-primary" />
-                        <span className="text-sm font-medium text-muted-foreground">
-                          {info.label}:
-                        </span>
-                        <span className="text-sm font-medium">
+                        <div className="flex items-center gap-3">
+                          <info.icon className="h-4 w-4 text-muted-foreground" />
+                          <span className="text-sm font-medium text-muted-foreground">
+                            {info.label}
+                          </span>
+                        </div>
+                        <span className="text-sm font-semibold">
                           {info.value}
                         </span>
                       </div>
                     ))}
                   </div>
 
-                  <div className="pt-4">
-                    <h4 className="text-sm font-medium mb-3">
+                  <div>
+                    <h4 className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-4">
                       {t("employment_types.title")}
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {JOB_POSITION.employmentTypes.map((type) => (
-                        <Badge key={type} variant="outline" className="text-xs">
+                        <Badge
+                          key={type}
+                          variant="secondary"
+                          className="px-3 py-1.5 text-sm bg-secondary/50 hover:bg-secondary transition-colors"
+                        >
                           {t(type)}
                         </Badge>
                       ))}
@@ -297,14 +339,43 @@ export async function Vacancy() {
                   </div>
                 </CardContent>
               </Card>
-            </div>
+            </Motion>
 
             {/* Salary Info */}
-            <div>
-              <Suspense fallback={<SalaryTableSkeleton />}>
-                <ExchangeRatesData />
-              </Suspense>
-            </div>
+            <Motion
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <Card className="h-full border border-border/40 shadow-sm bg-background/50 backdrop-blur-sm">
+                <CardHeader className="pb-6 border-b border-border/40">
+                  <div className="flex items-center justify-between">
+                    <CardTitle className="text-xl font-bold flex items-center gap-3">
+                      <div className="p-2 rounded-lg bg-green-500/10 text-green-600 dark:text-green-400">
+                        <DollarSign className="h-5 w-5" />
+                      </div>
+                      {t("salary.title")}
+                    </CardTitle>
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <InfoIcon className="h-4 w-4 text-muted-foreground cursor-help opacity-70 hover:opacity-100 transition-opacity" />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p className="text-sm">{t("salary.tooltip")}</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </div>
+                </CardHeader>
+                <CardContent className="p-6">
+                  <Suspense fallback={<SalaryTableSkeleton />}>
+                    <ExchangeRatesData />
+                  </Suspense>
+                </CardContent>
+              </Card>
+            </Motion>
           </div>
         </Motion>
       </div>
