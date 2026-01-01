@@ -25,11 +25,19 @@
     "embla-carousel-react": "^8.5.2",
     "framer-motion": "^12.4.10",
     "lucide-react": "^0.479.0",
+<<<<<<< HEAD
     "next": "^16.1.1",
     "next-intl": "^4.7.0",
     "next-themes": "^0.4.6",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
+=======
+    "next": "15.2.6",
+    "next-intl": "^3.26.5",
+    "next-themes": "^0.4.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+>>>>>>> 63522131c55e3b31214a1946688d7975dbc0b556
     "react-icons": "^5.5.0",
     "tailwind-merge": "^3.0.2",
     "tailwindcss-animate": "^1.0.7",
