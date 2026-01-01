@@ -19,16 +19,16 @@ export async function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-5xl mx-auto px-6 flex flex-col items-center text-center">
+      <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 flex flex-col items-center text-center">
         {/* Avatar with Glow */}
         <Motion
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="mb-8 relative"
+          className="mb-6 md:mb-8 relative"
         >
           <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-primary/50 to-secondary/50 opacity-30 blur-lg animate-pulse" />
-          <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-background shadow-2xl ring-1 ring-border/50">
+          <div className="relative w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-background shadow-2xl ring-1 ring-border/50">
             <Image
               src="/avatar.jpg"
               alt="Avatar"
@@ -44,11 +44,11 @@ export async function Hero() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="mb-8"
+          className="mb-6 md:mb-8"
         >
           <Badge
             variant="outline"
-            className="rounded-full px-4 py-1.5 text-sm font-medium bg-background/50 backdrop-blur-md border-border/50 shadow-sm"
+            className="rounded-full px-4 py-1.5 text-xs sm:text-sm font-medium bg-background/50 backdrop-blur-md border-border/50 shadow-sm"
           >
             <span className="relative flex h-2 w-2 mr-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
@@ -63,12 +63,12 @@ export async function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mb-6 space-y-4"
+          className="mb-6 space-y-2 sm:space-y-4"
         >
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight">
             <span className="block text-foreground">{t("hello_name")}</span>
-            <span className="block bg-gradient-to-r from-primary to-primary/50 bg-clip-text text-transparent text-2xl md:text-4xl lg:text-5xl font-semibold mt-2">
-              {t("role_description") || "Frontend Engineer"}
+            <span className="block bg-gradient-to-r from-primary to-primary/50 bg-clip-text text-transparent text-xl sm:text-2xl md:text-4xl lg:text-5xl font-semibold mt-2">
+              {t("role_description") || "Fullstack Developer"}
             </span>
           </h1>
         </Motion>
@@ -78,9 +78,9 @@ export async function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="max-w-2xl mb-10"
+          className="max-w-2xl mb-8 md:mb-10"
         >
-          <p className="text-base md:text-lg text-muted-foreground leading-relaxed text-pretty">
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed text-pretty px-2">
             {t("developer_description")}
           </p>
         </Motion>
@@ -90,12 +90,12 @@ export async function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex flex-col sm:flex-row items-center gap-4 mb-10"
+          className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 mb-10 w-full sm:w-auto px-4 sm:px-0"
         >
           <Button
             asChild
             size="lg"
-            className="h-12 px-8 rounded-full text-base font-medium min-w-[150px] shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all duration-300"
+            className="h-12 px-8 rounded-full text-base font-medium w-full sm:w-auto min-w-[150px] shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all duration-300"
           >
             <Link href={SOCIAL_LINKS.TELEGRAM} target="_blank">
               {t("contact")}
@@ -106,7 +106,7 @@ export async function Hero() {
           <Button
             variant="outline"
             size="lg"
-            className="h-12 px-8 rounded-full text-base font-medium min-w-[150px] bg-background/50 hover:bg-muted/50 border-border/50 hover:border-border transition-all duration-300"
+            className="h-12 px-8 rounded-full text-base font-medium w-full sm:w-auto min-w-[150px] bg-background/50 hover:bg-muted/50 border-border/50 hover:border-border transition-all duration-300"
             asChild
           >
             <Link href={SOCIAL_LINKS.GITHUB} target="_blank">
@@ -118,7 +118,7 @@ export async function Hero() {
           <Button
             variant="ghost"
             size="lg"
-            className="h-12 px-8 rounded-full text-base font-medium hover:bg-muted/50 transition-all duration-300"
+            className="h-12 px-8 rounded-full text-base font-medium w-full sm:w-auto hover:bg-muted/50 transition-all duration-300"
             asChild
           >
             <a
