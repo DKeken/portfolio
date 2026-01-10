@@ -2,6 +2,7 @@ export interface ProjectConfig {
   id: number;
   key: string;
   image: string;
+  images?: string[];
   link: string;
   isNDA: boolean;
 }
@@ -15,6 +16,14 @@ export const PROJECTS: ProjectConfig[] = [
     // Wait, the original code had `link: t("projects.project11.link")`. This implies links might be localized or just stored in messages.
     // If links are in messages, we should keep using t for links.
     // I will store the structure here.
+    isNDA: false,
+  },
+  {
+    id: 12,
+    key: "project12",
+    image: "/images/images12.png",
+    images: ["/images/images12.png", "/images/project12-1.png"],
+    link: "https://github.com/DKeken/ai-bet-platform",
     isNDA: false,
   },
   {

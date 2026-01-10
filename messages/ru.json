@@ -211,6 +211,12 @@
         "description": "SaaS-платформа для агентств недвижимости с мульти-тенант архитектурой. Включает CRM, управление объектами, генерацию документов и интеграцию с рекламными площадками через микросервисы.",
         "tags": "Next.js, TypeScript, Microservices, SaaS, PostgreSQL, Multi-tenant, S3, Docker",
         "link": "https://bestproject.app/"
+      },
+      "project12": {
+        "title": "AI-Bet Platform",
+        "description": "Платформа ставок нового поколения, где игры симулируются ИИ-агентами (NPC) и координируются через высокопроизводительную микросервисную архитектуру. Включает трансляцию состояния игры в реальном времени и защищенную систему леджера.",
+        "tags": "Next.js, NestJS, Microservices, Kafka, PostgreSQL, ClickHouse, Redis, Docker, AI/ML, Turborepo",
+        "link": "https://github.com/DKeken/ai-bet-platform"
       }
     }
   },

@@ -13,6 +13,8 @@ export async function Portfolio() {
     description: t(`projects.${project.key}.description`),
     tags: t(`projects.${project.key}.tags`).split(","),
     link: t(`projects.${project.key}.link`),
+    // Ensure images array exists if defined in config, or fallback to single image
+    images: project.images || [project.image],
   }));
 
   const labels = {
@@ -22,9 +24,9 @@ export async function Portfolio() {
   };
 
   return (
-    <PortfolioGrid 
-      projects={projects} 
-      title={t("title")} 
+    <PortfolioGrid
+      projects={projects}
+      title={t("title")}
       subtitle={t("subtitle")}
       labels={labels}
     />
