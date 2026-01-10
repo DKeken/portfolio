@@ -25,9 +25,10 @@ export function ProjectCard({ project }: ProjectCardProps) {
   const t = useTranslations("portfolio");
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const images = project.images && project.images.length > 0
-    ? project.images
-    : [project.image];
+  const images =
+    project.images && project.images.length > 0
+      ? project.images
+      : [project.image];
   const hasMultipleImages = images.length > 1;
 
   const nextImage = (e: React.MouseEvent) => {
@@ -94,7 +95,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                     e.stopPropagation();
                     setCurrentImageIndex(idx);
                   }}
-                  className={`h-1.5 w-1.5 rounded-full transition-all duration-300 ${
+                  className={`h-1 w-1 rounded-full transition-all duration-300 ${
                     idx === currentImageIndex
                       ? "bg-white w-3"
                       : "bg-white/50 hover:bg-white/80"

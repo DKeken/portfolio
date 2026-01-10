@@ -21,8 +21,8 @@ export const PROJECTS: ProjectConfig[] = [
   {
     id: 12,
     key: "project12",
-    image: "/images/images12.png",
-    images: ["/images/images12.png", "/images/project12-1.png"],
+    image: "/images/project12-1.png",
+    images: ["/images/project12-1.png", "/images/images12.png"],
     link: "https://github.com/DKeken/ai-bet-platform",
     isNDA: false,
   },
